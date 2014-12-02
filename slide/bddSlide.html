@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+<head>
+    <title>BDD Slide</title>
+    <meta charset="utf-8"/>
+    <link href="css/impress-demo.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="impress-not-supported">
+    <div class="fallback-message">
+        <p>你的浏览器<b>不支持</b> impress.js, 所以当前展示的是简化版。</p>
+
+        <p>为了获得更好的体验，请使用最新的 <b>Chrome</b>, <b>Safari</b> 或者 <b>Firefox</b> 浏览器。</p>
+    </div>
+</div>
+<div id="impress">
+<div class="step" data-x="-1000" data-y="0" data-z="900">
+    <h1>Behavior Driven Development</h1>
+    <br>
+
+    <div align="right">
+        <blockquote>
+            <h2>--JBehave Intro</h2>
+            <br>
+                <span class="footnote">
+                    <p>Author: <em>xiaopeng.cai</em></p>
+
+                    <p>Date: <em>2014-11-25</em></p>
+                </span>
+        </blockquote>
+    </div>
+</div>
+<div class="step" data-x="1200" data-y="0" data-z="300">
+    <h2>Overview</h2>
+    <ul>
+        <li>About BDD</li>
+        <li>BDD Frameworks</li>
+        <li>About JBehave</li>
+        <li>JBehave Demo</li>
+    </ul>
+</div>
+<div class="step" data-x="1800" data-y="0" data-z="-300">
+    <h2>About BDD</h2>
+    <blockquote>
+        <p><strong>Behaviour-Driven Development (BDD)</strong> is an evolution in the thinking behind
+            TestDrivenDevelopment and AcceptanceTestDrivenPlanning.</p>
+
+        <p>It aims to help focus development on the delivery of prioritised, verifiable business value by providing
+            a
+            common vocabulary (also referred to as a Ubiquitous Language) that spans the divide between Business and
+            Technology.</p>
+
+        <p>In BDD, the behaviours represent both the specification and the test cases.</p>
+    </blockquote>
+</div>
+<div class="step" data-x="1200" data-y="800" data-z="-300" data-rotate="90">
+
+    <h2>BDD Goals</h2>
+    <blockquote>
+        <p>BDD aims to bridge the gap between the differing views of computer systems held by Business users and
+            Technologists.</p>
+
+        <p>BDD aims to make development practices more accessible and intuitive to newcomers and experts alike, but
+            shifting the vocabulary from being test-based to behaviour-based. It positions itself as a development
+            paradigm, emphasising communication and automation as equal goals.</p>
+
+        <p>BDD relies on the use of a very specific (and small) vocabulary to minimize miscommunication and to
+            ensure
+            that everyone – the business, developers, testers, analysts and managers – are not only on the same page
+            but
+            using the same words.</p>
+    </blockquote>
+</div>
+<div class="step" data-x="0" data-y="0" data-z="-300" data-rotate="180">
+    <h2>BDD Frameworks</h2>
+
+    <p>Most of BDD frameworks use common template for whiting tests:</p>
+    <blockquote>
+        <ul>
+            <li><p>Given (some context)</p></li>
+            <li><p>When (something happens)</p></li>
+            <li><p>Then (some behavioral validation)</p></li>
+        </ul>
+    </blockquote>
+</div>
+
+<div class="step" data-x="1200" data-y="-800" data-z="-300" data-rotate="270">
+    <h2>BDD Frameworks</h2>
+
+    <p>1) High-level BDD tools: Usually separate the specifications</p>
+    <blockquote>
+        <ul>
+            <li><p><strong><a href="http://jbehave.org/">JBehave</a></strong></p></li>
+            <li><p><strong><a href="http://cukes.info/">Cucumber</a></strong></p></li>
+            <li><p><strong><a href="http://www.concordion.org">Concordion</a></strong>: Write the specifications in
+                the
+                form of tagged HTML</p>
+            </li>
+        </ul>
+    </blockquote>
+    <p>2) TDD-style (coding-level) BDD tools are unit-testing tools with a BDD flavor</p>
+    <blockquote>
+        <ul>
+            <li><p><strong><a href="http://jdave.org/">JDave</a></strong> :native Java BDD tools</p></li>
+            <li><p><strong>Spock</strong>: light-weight BDD unit testing in Groovy</p></li>
+            <li><p><strong>Jasmine</strong> : BDD for Javascript</p></li>
+        </ul>
+    </blockquote>
+</div>
+
+<div class="step" data-x="-1000" data-z="-600" data-y="-1600">
+    <h2>About JBehave</h2>
+
+    <p>JBehave is a framework for Behavior-Driven Development (BDD). Is intended to make these practices more
+        accessible
+        and intuitive to newcomers and experts alike. It shifts the vocabulary from being test-based to
+        behavior-based,
+        and positions itself as a design philosophy.</p>
+    <blockquote>
+        <ul>
+            <li>JBehave Core</li>
+            <li>JBehave Web</li>
+            <li>JBehave Plugin</li>
+        </ul>
+    </blockquote>
+</div>
+<div class="step" data-x="0" data-y="-1600" data-z="-600">
+    <h2>The five-step overview</h2>
+    <blockquote>
+        <ul>
+            <li>Write Story</li>
+            <li>Map steps to Java</li>
+            <li>Configure Stories</li>
+            <li>Run Stories</li>
+            <li>View Report</li>
+        </ul>
+    </blockquote>
+</div>
+
+<div class="step" data-x="-1000" data-y="-800" data-z="-600" data-rotate="90" data-scale="1">
+    <h3>Write Story</h3>
+        <pre>
+        <code class='prettyprint'>
+            Search Etsy.com by sub category
+            <strong>Meta:</strong>
+            @category advanced
+            @color red
+            <strong>Narrative:</strong>
+            In order to show the advance cart functionality
+            As a user I want to search for an item in a sub category
+            <strong>Scenario:</strong> Advanced Search for a hat
+            <strong>Given</strong> I am searching on Etsy.com
+            <strong>When</strong> I search for an item
+            <strong>And</strong> I search for hat
+            <strong>Then</strong> there are search results
+            <strong> Scenario:</strong> Advanced Search for a ring
+            ...
+        </code></pre>
+</div>
+
+<div class="step" data-x="-2000" data-y="-1600" data-z="-600" data-rotate="180" data-scale="1">
+    <h2>Map steps to Java</h2>
+
+    <blockquote>
+        <h3>Step Annotations</h3>
+        <blockquote>
+            <ul>
+                <li>@Given</li>
+                <li>@When</li>
+                <li>@Then</li>
+                <li>@Alias</li>
+                <li>@Aliases</li>
+                <li>@Pending</li>
+            </ul>
+        </blockquote>
+    </blockquote>
+</div>
+<div class="step" data-x="-2000" data-y="-1900" data-z="-900" data-rotate="270" data-scale="0.5">
+
+    <blockquote>
+        <h3>Scenario Annotations</h3>
+        <blockquote>
+            <ul>
+                <li>@BeforeScenario</li>
+                <li>@AfterScenario</li>
+            </ul>
+        </blockquote>
+        <h3>Story Annotations</h3>
+        <blockquote>
+            <ul>
+                <li>@BeforeStory</li>
+                <li>@AfterStory</li>
+            </ul>
+        </blockquote>
+    </blockquote>
+</div>
+<div class="step" data-x="-1100" data-y="-2500" data-z="-600" data-rotate="315">
+
+    <h2>Configure Stories</h2>
+    <blockquote>
+        <blockquote>
+            <ul>
+                <li>@AsParameterConverter</li>
+                <li>@Configure</li>
+                <li>@UsingEmbedder</li>
+                <li>@UsingSteps</li>
+                <li>@UsingGuice</li>
+                <li>@UsingNeedle</li>
+                <li>@NeedleInjectionProvider</li>
+                <li>@UsingPico</li>
+                <li>@UsingSpring</li>
+            </ul>
+        </blockquote>
+    </blockquote>
+</div>
+
+<div class="step" data-x="-300" data-y="-2200" data-z="-600" data-rotate="340">
+    <h2>Run Stories</h2>
+
+    <p>JBehave is designed to be embedded in different development environments.
+        The JBehave Core module contains support for running stories as:</p>
+    <blockquote>
+        <blockquote>
+            <ul>
+                <li>JUnit tests or TestNG or Spring test</li>
+                <li>Ant tasks</li>
+                <li>Maven Goals</li>
+                <li>CI jenkins eg.</li>
+            </ul>
+        </blockquote>
+    </blockquote>
+</div>
+
+<div class="step" data-x="0" data-z="100" data-y="-600" data-rotate="360">
+    <h2>BDD Sequence Diagram</h2>
+
+    <img src="image/sequence.jpg" width="800" height="400">
+
+    <p style="text-indent: -50px">URL Ref:<br></p>
+
+    <p><a href="http://jbehave.org/"> JBehave: http://jbehave.org/</a><br></p>
+
+    <p>
+        <a href="http://java.dzone.com/articles/brief-comparison-bdd"> brief-comparison-bdd</a></p>
+
+</div>
+<!-- darren code -->
+<div id="overview" class="step" data-x="-200" data-y="-500" data-rotate="30" data-scale="3.5"></div>
+</div>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+</body>
+</html>

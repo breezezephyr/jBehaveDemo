@@ -1,0 +1,27 @@
+P2P Send Money
+
+Narrative:
+
+In order to spend less time paying my debts in person or by mail
+As a Person
+I want to send money online to another Person
+ 
+Scenario: Payor has enough funds
+
+GivenStories: onpay/RegisterPeople.story
+Given Sean is logged into his account page and has an available balance of $100
+When filling out the send money form with $90.01 in the amount field, cindy.yang@qunar.com in the recipient field and clicking on the submit button
+Then OnPay updates the account page with an available balance of $90 and a pending $10 transaction to cindy.yang@qunar.com
+And adds a payment notification to the account page for Sue in the notifications section
+ 
+Scenario: Payor does not have enough funds
+ 
+Given Sean is logged into his account page and has an available balance of $90
+When filling out the send money form with $90.01 in the amount field, cindy.yang@qunar.com in the recipient field and clicking on the submit button
+Then OnPay displays the account page with the available balance unchanged and the following message in the errors section "Insufficient Funds for Transaction. Please select a smaller amount" 
+ 
+Scenario: Payor enters a negative amount
+
+Given Sean is logged into his account page and has an available balance of $90
+When filling out the send money form with $-10 in the amount field, cindy.yang@qunar.com in the recipient field and clicking on the submit button
+Then OnPay displays the account page with the available balance unchanged and the following message in the errors section "Please enter a positive dollar amount" 
